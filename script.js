@@ -22,19 +22,20 @@ const container = document.querySelector('#container');
 for(let i=0 ; i<nbr_case ; i++ )
 {
     const newDiv = document.createElement('div');
-    newDiv.classList.add('internal_div');
-    newDiv.style.height ="60px"  ;
-    newDiv.style.width = "60px";
-    /*
+    
     newDiv.style.height = container_height / user_choice ;
     newDiv.style.width = container_width / user_choice ;
-    */
-    newDiv.style.border = "black";
-    //newDiv.style.backgroundColor = "black";
+
+
     newDiv.textContent ="abc";
+    if((i%2 )===0)
+    {
+        newDiv.style.backgroundColor="purple";
+    }
+    else
+        newDiv.style.backgroundColor="green";
     
-    //newDiv.style.border = 3px ;
+    
     container.appendChild(newDiv);
-   // console.log("A div was created : "+ i + " with a width of : "+ (container_width / user_choice));
 
 }
