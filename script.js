@@ -6,9 +6,6 @@ let user_choice = 0 ;
 let container_width = 960 ;
 let container_height = 960 ;
 
-// for the purpose of starting the project, let's SET a value to user_choice
-user_choice = 16;
-
 
 nbr_case = user_choice*user_choice;
 
@@ -43,10 +40,22 @@ function setGrid()
     }
 }
 
-setGrid();
 //Connect every miniDiv to a function
-
+const choice = document.getElementById('user_imput');
+choice.addEventListener('click',(e) => getNewGrid());
 
 function change(index){
     document.getElementsByClassName('miniDiv')[index].style.backgroundColor="black";
+}
+
+function getNewGrid(){
+    let choice = prompt("Chose the size of the grid (maximum 100) : ");
+    let intChoice = Number(choice);
+    if( intChoice > 100)
+    {
+        intChoice = 100 ; //If the user put a number > 100 set the limit for him
+    }
+    user_choice = intChoice;
+    console.log(user_choice);
+    setGrid();
 }
