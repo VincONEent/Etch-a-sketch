@@ -1,6 +1,4 @@
 
-
-
 let nbr_case = 0 ;
 let user_choice = 0 ;
 
@@ -22,9 +20,13 @@ const container = document.querySelector('#container');
 for(let i=0 ; i<nbr_case ; i++ )
 {
     const newDiv = document.createElement('div');
-    
+    /*
     newDiv.style.height = container_height / user_choice ;
     newDiv.style.width = container_width / user_choice ;
+
+    */
+   newDiv.style.width = "60px";
+   newDiv.style.height = "60px";
 
 
     newDiv.textContent ="abc";
