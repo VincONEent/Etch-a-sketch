@@ -16,19 +16,21 @@ user_choice = 16;
 nbr_case = user_choice*user_choice;
 
 const container = document.querySelector('#container');
+let height = 0;
+let width = 0 ;
+//Calcul of the size of a div given the choice of the size of the grid
+height= container_height / user_choice;
+width =container_width / user_choice;
 
 for(let i=0 ; i<nbr_case ; i++ )
 {
+    //Creation of a new div
     const newDiv = document.createElement('div');
-    /*
-    newDiv.style.height = container_height / user_choice ;
-    newDiv.style.width = container_width / user_choice ;
-
-    */
-   newDiv.style.width = "60px";
-   newDiv.style.height = "60px";
-
-
+    //Setting the correct size to the div
+    newDiv.style.height = height.toString() + "px" ;
+    newDiv.style.width =  width.toString() + "px" ;
+    newDiv.classList.add('miniDiv');
+    //temporary tests
     newDiv.textContent ="abc";
     if((i%2 )===0)
     {
@@ -37,7 +39,18 @@ for(let i=0 ; i<nbr_case ; i++ )
     else
         newDiv.style.backgroundColor="green";
     
-    
+    //adding the div to the container
     container.appendChild(newDiv);
 
 }
+/*
+document.getElementsByClassName('miniDiv')[1].addEventListener('click', (e)=> console.log("That big line of code worked"));
+document.getElementsByClassName('miniDIv').addEventListener('click', (e)=> console.log("That big line of code worked"));
+*/
+
+//Connect every miniDiv to a function
+for(let i=0 ; i<nbr_case ; i++)
+{
+    document.getElementsByClassName('miniDiv')[i].addEventListener('click', (e)  => console.log("That big line of code worked"));
+}
+
